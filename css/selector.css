@@ -1,0 +1,104 @@
+@import url("./reset.css");
+
+header{
+    background-color: rgb(70, 68, 68);
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+    /* 배경, 텍스트정렬, 문자색상, 여백 */
+}
+header .menu{
+    text-align: center !important;
+}
+header .right{
+    text-align: right;
+}
+header .menu > a{
+    font-size: 20px;
+    color: whitesmoke;
+    font-weight: bold;
+    font-style: italic;
+    font-family: Georgia, serif;
+    text-decoration: none;
+    text-transform:capitalize;
+    letter-spacing: -1px;
+    line-height: 1.6;
+    /* 16~24 */
+}
+header .menu > a:nth-child(2){
+    color:darkkhaki ;
+    /* :nth-of-type(2)  nth-child(2) */
+}
+main{}
+footer{}
+aside{}
+#content > p:nth-of-type(1){
+    height: 300px;
+    background-color: cadetblue;
+}
+#content > p:nth-of-type(2){
+    text-align: center;
+}
+.content{
+    width: 400px;
+    background-color: bisque;
+}
+.ex{
+    width: 1000px;
+    border: 1px solid red;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+}
+.ex > p{
+    width: 50%;
+    height: 600px;
+    background-color: bisque;
+}
+.ex > div{
+    width: 50%;
+    padding-left: 60px;
+}
+.ex > div > h2{
+    font-size: 40px;
+}
+.ex > div > p{
+    font-size: 20px;
+    margin: 20px 0;
+
+}
+.ex > div > a{
+    background-color: yellow;
+    border: 1px solid black;
+    padding: 10px 30px;
+    display: inline-block; /* 버튼은 인라인 블록으로 입력 */
+
+}
+
+
+
+
+.ex2{
+    width: 1000px; margin: 100px auto;
+}
+.ex2 > h2{
+
+}
+.ex2 .list{
+    margin: 0; padding: 0; 
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.ex2 .list > li{width: 30%;
+}
+.ex2 .list > li > p{
+
+}
+.ex2 .list > li > p > img{
+    width: 100%;
+}
+.ex2 .list > li > div{}
+.ex2 .list > li > div > b{}
+.ex2 .list > li > div > p{}

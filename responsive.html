@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <title>responsiv</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">item1</div>
+            <div class="col-lg-4">item2</div>
+            <div class="col-lg-4">item3</div>
+        </div>
+    </div>
+    <div class="mi">
+        <div class="flex"> <p>01</p> <p>02</p></div>
+        <div class="pos"></div>
+    </div>
+
+
+    <style>
+        .mi{
+            width: 80%;
+            margin: 100px auto;
+        }
+        .mi .flex{
+            background-color: beige; padding: 60px;
+            display: flex;
+        }
+        .mi .flex p{ 
+            background-color: blueviolet; padding: 60px;
+            flex-grow: 1;
+        }
+        .mi .pos{
+            position: absolute;
+            right: 0; top:0;
+            background-color: yellow;
+            padding: 100px;
+        } 
+        /* 미디어 쿼리 위로 올려놓으면 수정에 좋음 해당 쿼리에 붙여서 그 수치에서 수정하면 됨*/
+
+
+        /* 모바일 가로(min:320 ~ max:480)481~767 남은 수치는 가로 사이즈,  태블릿(min:768 ~ max:1279), 
+        pc(1280~)웹으로 수치 계산 후 태블릿 까지 호환되면 뺴도 됨. 가로위주로 작업 */
+
+        /* 모바일 */
+        @media  (min-width:340px) and (max-width:480px){}
+        @media  (max-width:480px){} /* 0~480 */
+
+        @media  (min-width:481px) and (max-width:767px){}
+        @media  (max-width:767px){} /* 0~767 */
+        @media  (min-width:481px){} /* 481~ */
+
+        /* 태블릿 */
+        @media  (min-width:768px) and (max-width:1279px){}
+        @media  (min-width:768px){} /* 768~ */
+        @media  (max-width:1279px){} /* 0~1279 */
+
+        /* PC */
+        @media  (min-width:1280px){} /* 1280~ */
+
+
+        /* @media  (min-width:1400px) and (max-width:1500px){ } */
+        /* min으로 바꿔주면 1400이상으로 바뀜 */
+        /* .container{ max-width: 1500px;} */
+
+        /* ex */ /* 사이즈가 중복되더라도 순서를 통해 가능 */
+        
+        @media (max-width:480px){
+            body{ 
+            background-color: rgb(149, 248, 187);
+            }
+        }
+        @media (min-width:481px) and (max-width:767px){
+            body{ 
+            background-color: aqua;
+            }
+        }
+        @media (min-width:768px) and (max-width:1279px){
+            body{ 
+            background-color: aqua;
+            }
+        /* 수정한 코드만 남기고 삭제 가능 */
+        .mi .flex{
+            flex-direction: column;
+        }
+        .mi .pos{
+            position: absolute; /* static : 포지션 해제 명령어 */
+        } 
+        } 
+        /* @media 1구간만 나옴 */
+
+        /* @media (min-width:320px){
+            body{ 
+            background-color: rgb(163, 244, 166);
+            }
+        } */
+        /*  @media (min-width:481px){
+            body{ 
+            background-color: aqua;
+            }
+        } */
+       /*  @media (min-width:768px){
+            body{ 
+            background-color: rgb(247, 141, 141);
+            }
+        } */
+        @media (min-width:1280px){
+            body{ 
+                background-color: white;
+            }
+        }
+    </style>
+</body>
+</html>

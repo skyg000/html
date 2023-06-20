@@ -1,0 +1,42 @@
+@import url('./reset.css');
+
+.ex{ /* 전체 */
+    width: 1400px;
+    border: 1px solid black;
+
+}
+.ex > h2{ /* 제목 */
+    margin: 30px 0 10px 0; 
+    text-align: center;
+}
+.ex > p{ /* 제목 내용 */
+    text-align: center;
+}
+.self{ /* 컨텐츠 틀*/
+    margin: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.text{ /* 세부컨텐츠 */
+    display: flex;
+    width: 40%;
+}
+.text > p{ /* 이미지 */
+    width: 260px;
+    height: 180px;
+    margin-bottom: 100px;
+    
+}
+.text > div{ /* 컨텐츠 내용 */
+    margin: 40px 0 0 0px;
+    width: 300px;
+    
+}
+.text > div > b{ /* 컨텐츠 내용 제목 */
+    margin-bottom: 200px ;
+}
+
+.text > div > p { /* 컨텐츠 내용 본문 */
+    margin-top: 30px;
+}

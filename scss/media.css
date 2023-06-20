@@ -1,0 +1,15 @@
+/* $mobile: 480px;
+$mobile:(480px,768px); */
+@media (max-width:767px) {
+  body {
+    background-color: yellow;
+  }
+}
+@media (max-width:480px) {
+  header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: white;
+  }
+}/*# sourceMappingURL=media.css.map */

@@ -1,0 +1,92 @@
+@charset "utf-8";
+@import url("./reset.css"); 
+/* 한글주석
+파일명(영문소문자, 스페이스X) */
+/* Flex.html(X)
+flex .html(X)
+8-flex.html(X)
+
+flex.html(O) */
+article{
+    width: 50%;
+    margin: 100px auto;
+    background-color: antiquewhite;
+    padding:3%;
+}
+article > div{white-space: pre-line;}
+.ex1{
+    background-color: red;
+    color: azure;
+    height: 400px;
+    display: flex;
+    justify-content: center; /* 가로정렬 */
+    /* justify-content: flex-end; */ /* 가로우측정렬 */
+    align-items: center; /* 세로정렬 */
+}
+
+.ex2{
+    background-color: red;
+    color: azure;
+    display: flex;
+    gap: 10px;
+}
+.ex2 > div{
+    flex-shrink: 0;
+    background-color: blueviolet;
+    width: 100%;
+    height:200px;
+}
+
+.ex3{
+    background-color: red;
+    color: azure;
+    display: flex;
+    flex-wrap: wrap; /* 부모의공간이 없으면 밑으로 떨어뜨림 */
+    /* gap: 5%; */ /* 부모가 값을가지고 있어야함 */
+    justify-content: space-between;
+}
+.ex3 > div{
+    margin-top: 5% ;
+    background-color: rgb(17, 238, 208);
+    width: 30%;
+    height:200px;
+}
+
+.ex4{
+    background-color: red;
+    color: azure;
+    display: flex;
+    /* flex-direction:  row \ colum; */
+    flex-wrap: wrap; /* 부모의공간이 없으면 밑으로 떨어뜨림 */
+    /* gap: 5%; */ /* 부모가 값을가지고 있어야함 */
+    gap: 20px;
+}
+.ex4 > div{
+    background-color: blueviolet;
+    width: 45%;
+    height:200px;
+}
+
+/* 위치바꾸기 */
+.ex4 > div:nth-of-type(1){
+    order:2}
+.ex4 > div:nth-of-type(2){
+    order:1}
+.ex4 > div:nth-of-type(3){
+    order:3}
+.ex4 > div:nth-of-type(4){
+    order:4}
+
+/* 부모
+display:flex;
+= align-item: flex-start | center | flex-end
+= justify-content:flex-start | center | flex-end
+        space-between | space-around | space-evenly */
+
+/* =flex-wrap:wrap; /* 리스트 형태의 콘텐츠 
+=flex-direction:row | colums | */
+
+/* 자식
+= 너비감소 (flex-shrink:1|0)
+= 너비비율 (flex-grow: 1)
+= 순서변경 (order:1) */

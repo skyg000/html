@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform</title>
+</head>
+<body>
+    <style>
+        article{
+            width: 100%;height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        img{
+            width: 100%; 
+            vertical-align: middle;
+            transition: 0.5s;
+        }
+    </style>
+    scale, rotate, skew, translate
+    <article>
+        <h2>transform(scale 확대)</h2>
+        <figure class="scale">
+            <img src="./img/12.jpg" alt="">
+        </figure>
+        <style>
+            .scale{width: 400px; overflow: hidden;} /* overflow: hidden;= 이미지만 확대 */
+            .scale:hover img{
+                transform: scale(2); /* scale(2)=이미지 확대 200%  x,y사용가능*/
+                transform-origin: 100% 100%; /* transform-origin:=확대 위치를 변경해주는 명령어 | 문자/수치로도 입력 가능*/ 
+            }
+        </style>
+    </article>
+
+    <article>
+        <h2>transform(rotate 회전)</h2>
+        <figure class="rotate">
+            <img src="./img/12.jpg" alt="">
+        </figure>
+        <style>
+            .rotate{width: 400px; /* overflow: hidden; */} /* overflow: hidden;= 이미지만 확대 */
+            .rotate img{
+                transform-origin: right bottom; 
+                /* transform-origin:=이미지 위치를 지정해주는 명령어 | 문자/수치로도 입력 가능 | 이미지에 기준점을 정해주면 부드러워보임*/ 
+            }
+            .rotate:hover img{
+                transform: rotate(90deg); /* rotate=이미지 회전  x,y사용가능*/
+               /*  transform-origin: right bottom;  *//* transform-origin:=이미지 위치를 지정해주는 명령어 | 문자/수치로도 입력 가능*/ 
+            }
+        </style>
+    </article>
+
+    <article>
+        <h2>transform(rotate, perspective 회전,원근감)</h2>
+        <figure class="rotate-p">
+            <img src="./img/12.jpg" alt="">
+        </figure>
+        <style>
+            .rotate-p{width: 400px; /* overflow: hidden; */} /* overflow: hidden;= 이미지만 확대 */
+            .rotate-p:hover img{
+                transform: perspective(300px) rotateX(60deg) ; 
+                /* rotate=이미지 회전  x,y사용가능*/
+               /*  transform-origin: right bottom;  *//* transform-origin:=이미지 위치를 지정해주는 명령어 |
+                문자/수치로도 입력 가능 | perspective(300px)=이미지 원근감 효과(순서를 앞에 두는게 좋음) */ 
+            }
+        </style>
+    </article>
+
+    <article>
+        <h2>transform(translate )</h2>
+        <figure class="translate">
+            <img src="./img/11.jpg" alt="">
+        </figure>
+        <style>
+            .translate{
+                border: 1px solid red;
+                position: relative;
+                width: 500px; height: 500px;
+            }
+            .translate img{
+                position: absolute;
+                left: 50%; top: 50%;
+                transform: translate(-50%, -50%);
+            } 
+        </style>
+    </article>
+
+    <article>
+        <h2>transform(translate2 )</h2>
+        <figure class="translate2">
+            <img src="./img/11.jpg" alt="">
+        </figure>
+        <style>
+            .translate2{
+                width: 500px; height: 500px;
+            }
+            .translate2 img{
+                transition: 0.5s cubic-bezier(.55,.16,.0,.1.69); /* ease */
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            }
+            .translate2 img:hover{
+                transform: translate(-20px, -20px);
+                box-shadow: 30px 30px 20px rgb(248, 139, 139);
+            }
+        </style>
+    </article>
+
+    <article>
+        <h2>transform(skew 기울기 )</h2>
+        <figure class="skew">
+            <img src="./img/11.jpg" alt="">
+        </figure>
+        <style>
+            .skew{
+                width: 500px;
+                position: relative;
+            }
+            .skew::after{
+                content:"";
+                position:absolute;
+                right:0; bottom:0;
+                background-color:rgba(0,0,0,0.2);
+                width:100%; height:50%;
+                transform-origin: 100% 100%;
+                transform: skew(64deg);
+                z-index: -1;
+                transition: .5s;
+
+            }
+            .skew:hover img{
+                transform: skew(45deg);
+                transform-origin: 100% 100%;
+            }
+            .skew:hover img, .skew:hover::after{
+                transform: skew(0deg);
+            }
+        </style>
+    </article>
+
+    <article>
+        <h2>Animation</h2>
+        <div class="ani">
+            <P>HTML, CSS, JS</P>
+        </div>
+    </article>
+    <style>
+        .ani{
+            overflow: hidden;
+        }
+        .ani p{
+            margin: 0;
+            transform: translateY(100%);
+            font-size: 5rem;
+            animation: txt 1s forwards;
+        }
+        .ani p::after{
+            content: "";
+            border-bottom: 5px solid black;
+            display: block;
+            margin: 0 auto;
+            width: 0%;
+            animation: line 0.5s 0.5s forwards;
+        }
+        @keyframes txt{
+            0%{transform: translateY(100%);}
+            100%{transform: translateY(0%);}
+        }
+        @keyframes line{
+            0%{width: 0%;}
+            100%{width: 100%;}
+        }
+
+    </style>
+
+
+
+</body>
+</html>

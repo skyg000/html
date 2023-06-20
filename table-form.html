@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table-form</title>
+</head>
+<body>
+
+    <fieldset>
+        <legend>Form</legend>
+        <p> method 값 get 방식은 입력값을 URL 뒤쪽으로 넘겨줌 ? 뒤쪽으로는 파라미터 값</p>
+
+        <form action="iframe-video.html" method="get"> 
+        <!-- 제출,저장버튼 있는 곳에는 쓰이는 태그  | 스타일명령어 제외 form태그 변경가능하기 때문에 | action=버튼클릭 후 연결된 곳으로 넘어감 -->
+            <ul>
+                <li>
+                    <label for="aaa">아이디</label> <!-- label 과 input을 for | id 로 연결시켜줌 -->
+                    <input id="aaa" type="text" name="id" 
+                        placeholder="6문자로 입력~~~" 
+                        required
+                        maxlength="5">
+                        <!-- readonly --> 
+                    <!-- 입력 | name="id"= 입력한 값을 연결 된 곳으로 가지고 넘어감 |
+                        placeholder= 입력칸 안에 보임 | required= 입력안된상태로 제출시 피드백이 나옴 |  maxlength= 입력수 제한 | readonly= 입력불가 -->
+                </li>
+                <li>
+                    <label>비밀번호</label> 
+                    <input type="password" name="pw"> 
+                </li>
+                <li>
+                    <label>이메일</label> 
+                    <input type="email" name="email"> 
+                </li>
+                <li>
+                    <label>연락처</label> 
+                    <input type="tel" name="tel"> 
+                </li>
+                <li>
+                    <label>검색</label> 
+                    <input type="search" name="search"> 
+                </li>
+                <li>
+                    <label>URL</label> 
+                    <input type="URL" name="URL"> 
+                </li>
+                <li>
+                    <label>숫자</label> 
+                    <input type="number" name="number" value="1" nin="1" max="10"> 
+                </li>
+                <li>
+                    <label>색상</label> 
+                    <input type="color" name="color" value="#ff0000"> 
+                </li>
+                <li>
+                    <label>날짜</label> 
+                    <input type="date" name="date" value="2023-06-08">
+                    <input type="month" name="month" >
+                    <input type="time" name="time" >
+                    <input type="datetime-local" name="all"> 
+                </li>
+                <li>
+                    <label>진행바</label> 
+                    <progress value="30" max="100"></progress> 
+                </li>
+                <li>
+                    <label>파일</label> 
+                    <input type="file" name="file"> 
+                </li>
+                <li>
+                    <label>성별</label> 
+                    <input type="radio" name="gender" checked>남 <!-- radio는 이름이 같아야 선택이 가능하다 | checked=기본값으로 체크되어 있는 명령어-->
+                    <input type="radio" name="gender">여 
+                </li>
+                <li>
+                    <label>설문</label> 
+                    <input type="checkbox" name="ch.1" checked>독서
+                    <input type="checkbox" name="ch.2"> 운동
+                    <input type="checkbox" name="ch.3"> 음악감상
+                    <input type="checkbox" name="ch.4"> 영화감상
+                    <input type="checkbox" name="ch.5">  요리
+                </li>
+                <li>
+                    <label>국적</label> 
+                    <input list="a">
+                    <datalist id="a">
+                        <option value="korea"></option>
+                        <option value="india"></option>
+                        <option value="sdadd"></option>
+                    </datalist>
+                </li>
+                <li>
+                    <label>지역</label>
+                    <select>
+                        <optgroup label="수도권">
+                            <option>서울</option>
+                            <option selected>경기</option> <!-- 기본값 -->
+                            <option>인천</option>
+                        <optgroup label="강원도">
+                                <option>강릉</option>
+                                <option>속초</option> <!-- 기본값 -->
+                                <option>양양</option>
+                        </optgroup>
+                    </select>
+                </li>
+                <li>
+                    <label>소개</label>
+                    <textarea cols="50" rows="5"></textarea>
+                </li>
+                <li>
+                    <button>결과보기</button>
+                    <button>주소찾기</button>
+                    <input type="button" value="주소찾기">
+                    <!-- <input type="image" src="./img/13.jpg"> -->
+                </li>
+                <li>
+                    <input type="submit" value="저장"> <!-- 제출버튼 | value= input에 값을 저장이란 단어로 바꿈-->
+                </li>
+                <li>
+                    <input type="reset" value="취소"> 
+                </li>
+            </ul>
+        </form>
+    </fieldset>
+
+    <style>
+        li{padding: 10px 0; border-bottom: 1px solid white;}
+        label{display: inline-block; width: 130px;}
+    </style>
+
+
+
+
+
+
+
+
+
+    <!-- border="1" cellspacing="50" cellpadding="50" --> <!-- cellpadding="50"=셀안쪽여백 -->
+    <style>
+        table{
+            border-collapse: collapse; width: 1000px;
+            margin: 100px auto;
+        } /* 기본값 */
+        th,td{
+            border: 1px solid black; 
+            padding: 30px;
+            border-width: 1px 0;
+            text-align: center;
+        }
+        td:nth-of-type(1),
+        td:nth-of-type(3){width: 100px;}
+        td:nth-of-type(2){text-align: left;}
+        tr:nth-of-type(2n) td{background-color: rgb(174, 191, 240);}
+        th{background-color: blanchedalmond;}
+        caption{
+            text-align: left; padding: 50px 0;
+            font-size: 2rem;
+        }
+    </style>
+    <table> 
+        <caption>테이블 제목</caption>
+        <thead>
+            <tr>
+                <th>번호</th> 
+                <th>제목</th>
+                <th>날짜</th>
+            </tr>
+            
+        </thead>
+        <tbody>
+            <tr>
+                <td>01</td>
+                <td>공지사항 입니다.</td>
+                <td>2023-06-08</td>
+            </tr>
+            <tr>
+                <td>02</td>
+                <td>공지사항 입니다.</td>
+                <td rowspan="2">2023-06-08</td>
+            </tr>
+            <tr>
+                <td>03</td>
+                <td>공지사항 입니다.</td>
+                
+            </tr>
+            <tr>
+                <td>04</td>
+                <td>공지사항 입니다.</td>
+                <td>2023-06-08</td>
+            </tr>
+            <tr>
+                <td>05</td>
+                <td>공지사항 입니다.</td>
+                <td>2023-06-08</td>
+            </tr>
+            <tr>
+                <td>06</td>
+                <td>공지사항 입니다.</td>
+                <td>2023-06-08</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">페이지 1 2 3 4 5 6</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <table border="2">
+        <tr>
+            <td colspan="2">1</td><td rowspan="3">3 , 6 , 9</td>
+        </tr>
+        <tr>
+            <td rowspan="2">4 , 7</td><td>5</td>
+        </tr>
+        <tr>
+            <td>8</td>
+        </tr>
+    </table>
+    <style>
+        table:nth-of-type(2) td{border-width: 1px;}
+    </style>
+    
+    
+</body>
+</html>

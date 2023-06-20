@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>check-radio</title>
+</head>
+<body>
+    <article>
+        <h2>checkbox 활용</h2>
+        <div class="check">
+            <input id="x" type="checkbox" name="check">
+            <label for="x"><span></span></label>
+        </div>
+    </article>
+
+    <!-- <style>
+        article{width: 50%; margin: 100px auto;}
+        .check input{
+            display: none;
+            /* opacity: 0; */ /* 투명도 */
+            /* visibipty: hidden; */ /* 숨기는 명령어 */
+        }
+        .check label{
+            display: block;
+            width: 60px; height: 26px;
+            background-color: #aaa;
+            border-radius: 26px; /* radius=세로기준 */
+        }
+        .check label span{
+            display: block;
+            width: 22px; height: 22px;
+            background-color: #fff;
+            border-radius: 22px;
+            transform: translate(2px, 2px);  /* translate= 이동시키는 명령어 */
+            transition: 0.5s; /* 부드럽게 보일 수 있는 효과 */
+        }
+        .check input:checked + label{  /* 체크박스가 체크 상태 일때만 명령이 적용  + 기호는 바로밑에 형제 요소만 */
+            background-color: greenyellow;
+        }
+        .check input:checked + label > span{  
+            transform: translate(36px, 2px);
+        }
+        /* .check label:hover{
+            background-color: red;
+        } */
+        /* .check label:active{    누르고 있는 상태
+            background-color: chartreuse;
+        } */    
+    </style>
+
+    <article>
+        <h2>활용</h2>
+        <div class="radio">
+            <input id="d" type="radio" name="spde">
+            <input id="e" type="radio" name="spde">
+
+            <label for="d">선택1</label>
+            <label for="e">선택2</label>
+
+            <div>
+                <figure>
+                <img src="./img/12.jpg">
+                <img src="./img/12.jpg">
+                </figure>
+            </div>
+        </div>
+        </article>
+
+    <style>
+    .radio label{
+        display: inpne-block;
+        background-color: #aaa;
+        padding: 10px 20px;
+    }
+    .radio div{
+        width: 500px;
+        /* display: flex;
+        transition: 1s; */
+        overflow: hidden;
+    }
+    .radio div figure{
+        display: flex; 
+        transition: 1s;
+        margin: 0;
+    }
+    .radio div img{
+        width: 100%;
+    }
+    .radio input:nth-of-type(1):checked ~ div > figure{
+        transform: translatex(0%);
+    }  /* ~모든형제요소 */
+    .radio input:nth-of-type(2):checked ~ div > figure{
+        transform: translatex(-100%);
+    }
+    .radio input{
+        display: none;
+    }
+    </style> -->
+
+    <article>
+        <!-- <h2>login</h2> -->
+        <div class="login">
+            <h2>login</h2>
+            <ul>
+                <li>
+                    <input type="text" name="id" placeholder="아이디">   
+                    <input type="password" name="pw" placeholder="비밀번호">
+                </li>
+                <li class="check1">
+                    <input id="a" type="checkbox" name="check">
+                    <label for="a"><span></span></label>
+                    <label class="text">로그인 상태 유지</label>
+                </li>
+                <li class="btn">
+                    <input type="submit" value="로그인">
+                </li>
+            </ul>
+        </div>
+    </article>
+
+    <style>
+        *{box-sizing: border-box;}
+        .login{
+            border: 3px solid black;
+            border-radius: 10px;
+            width: 390px;
+            padding: 10px 20px;
+        }
+        
+        ul{
+            margin: 0; padding: 0;
+        }
+        li{
+            list-style-type: none; 
+        
+        }
+        li input{
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px ;
+            outline: none;
+        }
+        .check1{
+            display: flex;
+            padding: 10px;
+        
+        }
+        .check1 label:nth-of-type(1){
+            width: 55px; height: 24px;
+            display: block;
+            background-color: #aaa;
+            border-radius: 20px;
+            
+        }
+        
+        .check1 input{
+            display: none;
+        }
+        .check1 label span{
+            display: block;
+            width: 22px; height: 23px;
+            background-color: white;
+            border-radius: 20px ;
+            transform: translate(1px);
+            transition: 0.25s;
+        }
+        .btn input{
+            background-color: rgb(126, 202, 12);
+            color: white;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px ;
+        }
+        .check1 input:checked + label{ 
+            background-color: greenyellow;
+        }
+        .check1 input:checked + label > span{  
+            transform: translate(30px, 1px);
+        }
+    </style>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iframe-video</title>
+</head>
+<body>
+    <!-- iframe 에서는 src에 컨텐츠를 넣는다 --> <!-- allowfullscreen 전체화면 --> <!-- scrolling='no' =스크롤 없애기 -->
+    <article>
+        <h2>iframe</h2>
+        <div style="display: flex;">
+            <iframe width="560" height="768" 
+            src="./img/rain.mp4"  
+            frameborder="0" 
+            allowfullscreen 
+            name="web">
+            </iframe>
+            <ul>
+                <li>
+                    <a href="https://www.youtube.com/embed/-PExnC26MMA?start=2" target="web">
+                        https://www.youtube.com/embed1/
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/embed/dP95z1QgnXk?start=2" target="web">
+                        https://www.youtube.com/embed2/
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </article>
+    
+    <article>
+        <h2>video</h2>
+        <figure>
+            <video width="100%" height="960" 
+            autoplay muted controls loop poster="./img/12.jpg"> 
+            <!-- autoplay muted는 함께 쓰이는 옵션 --> <!-- loop=반복재생 --> <!-- poster="./img/12.jpg" =썸네일 -->
+                <source src="./img/15.mp4" type="video/mp4">
+            </video>
+        </figure>
+	<p>sdad</p>
+    </article>
+
+    <style>
+        body,figure{margin: 0;}
+        video{
+            width: 100%; height: 100vh;
+            object-fit: cover;
+        }
+    </style>
+</body>
+</html>
+

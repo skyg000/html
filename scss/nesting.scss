@@ -1,0 +1,50 @@
+
+$wid:1000px;
+@mixin flex($x:flex-start,$y:flex-start){
+    display: flex;
+    justify-content: $x;
+    align-items: $y;
+    @content;
+}
+
+header{ 
+    padding: 20px 0;
+    width: $wid;
+    margin: 0 auto;
+    @include flex(space-between,center);
+    h1{
+        font-size: 2rem;
+    }
+    nav{
+        a{
+            padding: 0 20px;
+            color: rgb(253, 180, 84);
+        }
+    }
+}
+
+main{
+    width: $wid;
+    margin: 0 auto;
+}
+.spot{
+    figure{
+        margin: 0;
+        @include flex(space-between){
+            flex-wrap:wrap; 
+        };
+        img{
+            width: 30%;
+        }
+    }
+}
+/* 내용이 없으면 컴파일 시 제외됨  | map=scss와css를 연결 시켜주는 파일 |
+    css에 map관련 주석 처리 된 내용은 지우면 안됨 | watching은 1번만 실행해도 됨 |
+    중복되는 수치들은 변수에 설정하여 변수만 입력해주면 해당내용들이 바뀜 |
+    scss= $ 를 이용하여 선언($wid)하면 css에서 자동반영(값만설정가능) |
+    다중의 명령들을 선언하여 쓰는 방법= @mixin(묶을때)@include(선언할때) | 
+    @mixin뒤에()=변경할 때 쓰이고 값을 입력하고 변경 변경할 값을 일력하고 변수에 $입력하여 주어야함 
+    =기본값을 지정할 수 있음. 명령을 추가할 때는 @include에 {}속에 입력 후 @mixin 안에 @content입력
+
+    css도 :root로 사용가능  묶어줄 때 (--) 붙여주고 선언할 때 var(--)로 선언 |
+    자주이용하는항목 : 폰트사이즈, 색상, 플렉스, 정렬방식 등등...|*/

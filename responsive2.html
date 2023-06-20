@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>responsive2</title>
+</head>
+<body>
+    <header> 메 뉴 </header>
+    
+    <picture>
+        <source srcset="./img/02.jpg" media="(max-width:480px)">
+        <source srcset="./img/03.jpg" media="(max-width:768px)">
+        <img src="./img/01.jpg">
+    </picture>
+
+    <style>
+        @media print{
+            header{display: none;}
+        }
+        @media (orientation:landscape){
+            body{background-color: rgb(252, 231, 204);}
+        }
+        @media (orientation:portrait){
+            body{background-color: rgb(140, 199, 251);}
+        }
+        @media (hover:none){
+            picture:hover{
+                border: 5px solid black;
+            }
+        }
+        /* screen and= 화면에 해상도를 뜻 함 */
+        @media not (max-width:480px){ /* max는 481이상 부터 명령어 적용 */
+            body{font-size: 5rem;}
+        }
+        /* @media (min-width:768px){ 
+            body{font-size: 5rem;}
+        } */
+    </style>
+    <!-- 
+    <P>01</P>
+    <P>02</P>
+    <P>03</P>
+    <P>04</P>
+    
+p:not(:nth-child(3)){
+    3번을 제외한 1,2번
+} -->
+
+
+</body>
+</html>
