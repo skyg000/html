@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Inter:wght@100;200;300;400;500&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+$wid:1900px;
+$wid1:1470px;
+@mixin po{
+    position: absolute;
+    @content;
+}
+@mixin flex{
+    display: flex;
+    justify-content: center;
+}
+body{
+    font-family: 'Inter', sans-serif;
+    margin: 0; padding: 0;
+}
+header{
+    width: 100%;
+    position: sticky;
+    top:0;
+    background-color: white;
+}
+.menu{
+    width: $wid1;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    a{
+        text-decoration: none;
+        margin: auto;
+        padding: 20px;
+        font-weight: 400;
+        color: black;
+        img{}
+    }
+    a:nth-child(4){
+        font-weight: bold;
+    }
+    a:nth-child(5){
+        font-weight: 500;
+    }
+}
+.mem{
+    @include po{left: 37%; top: 23%;}
+    h2{
+    font-size: 70px;
+    color: white;
+    font-style: italic;
+    font-weight: 400;
+    }
+}
+.m-1{
+    width: $wid;
+    margin-bottom: 150px;
+    figure{
+        margin: 0 auto;
+        img{
+            width: 100%;    
+        }
+    }
+}
+.txt{
+    margin: 150px;
+    text-align: center;
+    b{
+        font-size: 30px;
+    }
+    b::after{
+        content: '';
+        width: 100px;
+        border-top: 2px solid black;
+        flex-grow: 1;  
+        display: block; 
+        margin: 30px auto;
+    }
+    p{
+        font-size: 15px;
+    }
+}
+.cont{
+    width: $wid1;
+    margin: 0 auto;
+    display:flex;
+    justify-content: space-evenly;
+    a{
+        text-decoration: none;
+        p{
+            color: black;
+            text-align: center;
+        }
+    }
+}
+.cont-2{
+    width: $wid;
+    position: relative;
+    margin-bottom: 200px;
+    figure{
+            margin: 0 auto;
+        img{
+            width: 100%;
+        }
+    }
+}
+.m-cont{
+    @include po{right: 20%; top:15%};
+}
+.cont-t{
+    text-align: left;
+
+    b{
+        font-size: 35px;
+        color:#D91226;
+    }
+    b:nth-child(2){
+        color: black;
+    }
+    p{
+        padding-top: 40px ;
+        font-size: 20px;
+    }
+}
+.con{
+    display: flex;
+    justify-content: space-between;
+}
+.icon{
+    margin: 50px 0;
+    figure{
+        margin: 0 auto;
+        display: flex; 
+        justify-content: center;
+        a{
+            box-sizing: border-box;
+            background-color: white;
+            border: 3px solid rgba(122, 122, 122, 1);
+            border-radius: 50%;
+            padding: 30px;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        img{
+            width: 72px; height: 72px;   
+            }   
+        }
+    }
+}
+.text{
+    text-align: center;
+    margin: 20px;
+    b{
+        font-size: 20px;
+    }
+    p{
+        font-size: 18px;
+    }
+}
+@import 'm-self';
+@import "reset";
+
+/* 1. 해상도 스타일(디바이스별 사이즈, mixin, media)=>media.scss
+2. 각 페이지별 반응형 스타일=> m-self.scss  */

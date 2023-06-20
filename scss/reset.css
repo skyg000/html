@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/* $mobile: 480px;
+$mobile:(480px,768px); */
+@media (max-width:767px) {
+  body {
+    background-color: yellow;
+  }
+}
+@media (max-width:480px) {
+  header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: white;
+  }
+}
+* {
+  /* 박스크기에 영향을 주지않음(안쪽여백,선) */
+  box-sizing: border-box;
+}
+
+body, p {
+  margin: 0;
+}
+
+html, body {
+  margin: 0;
+}
+
+ul, li, ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+
+/* 풋터, 버튼, 색상, 콘텐츠(컴포넌트)는 common.scss롤 빼줘야함 
+    다중 페이지 공통 스타일 *//*# sourceMappingURL=reset.css.map */
