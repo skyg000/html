@@ -4,15 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>data.html</title>
+    <title>data</title>
+    <script defer src="./스크립트 문서.js"></script> <!-- defer=다운로드 하고 밑에 문서를 로드 후 시작 | 2. 컨텐츠 로드 후 실행 --> 
 </head>
 <body>
     <div>
-
+        선택자
     </div>
     
     <script>
+        /* 1. 모든 리소스 로드 후 실행
+           2. 컨텐츠 로드 후 실행 */
+        
+        const element = document.querySelector('div');
+
+        element.innerText = 1500000000;
+        element.style = 'color:red'
+        element.className = 'test'
+
+        let num = 1500000;
+
+        element.onclick = function(){ /* 메뉴에 사용 예정 */
+            element.innerText = num * 3;
+            element.style = 'color:green'
+        }
+
+        /* document.querySelector('div').innerText = 1000000000;  
+            document.querySelector('div').style = "color:red"
+            document.querySelector('div').className = "test" */ 
+        /* .명령 = '갱신할 내용 또는 명령'; */ 
+        /* =은 갱신할 때 사용 | 선택자라는 문자 삭제 => 갱신할 내용 또는 명령 */
+
+        /* document.querySelector('div').명령;  */
+        /* .=class가 주어졌을때 | #=id가 주어졌을때 | 결과=>선택자 | 내용 요청*/
+
+       /*  document.getElementsByTagName('div'); */  /* 태그만 선택가능 */
+        /* document.getElementsByClassName('div'); */ /* 클래스만 선택가능 */
+        /* document.getElementById('div'); *//* ID만 선택가능 | 1개 이상이 존재하지 않으므로 s가아님*/
+
+
 
     </script>
+
+    <script>
+        /* var a; var는 브라우저가 선언값을 위로 끌어올림(호이스팅) 현재는 사용을 잘 안함*/
+        /* 스코프 
+            => {로컬변수 => {} 안에서 선언}
+            => 글로벌 변수 => 스크립트 상단에서 선언( {} 밖에서) */
+
+        let a;
+            a = '10000'; /* let= 네이밍 중복선언이 안됨, 호이스팅X | 스코프 영역에서 사용 | SyntaxError=문자가 틀렸을때 */ 
+            a += 10000; /* 값 변경이 + 되어서 a로 넘어감 */
+            /* 문자 + 숫자 = 문자숫자로 표시 */
+        console.log(
+            '홍석현의 점수는 '+ a +'입니다.' 
+        );
+
+        console.log(
+            `홍석현의 점수는 ${a}입니다.` 
+        );
+        /* ${}를 사용할때는 `기호를 사용해야 됨 | 가독성이 더 좋음 */
+    </script>
+    <!-- 
+    1. defer 스크립트문서 다운로드만 하고 밑에 문서들 로드 후 스크립트 문서 실행
+    2. let 가변변수로 값이 변경될때 쓰임
+    3. const 불변변수로 값이 고정값일때 쓰임
+    4. = 값을 바꿔줄때 사용
+    5. ` 기호는 ${}를 쓸때 같이사용 해야함.
+    6. 변수(스코프)는 입력한 영역에 따라쓰임이 달라짐 
+        {}안에 쓰이면 그 영역만 사용이 가능하고, {}밖에 쓰이면 전체 영역에서 사용가능
+    7. 호이스팅= var 선언문을 사용 하였을때 상위로 올려짐. 
+    -->
 </body>
 </html>
