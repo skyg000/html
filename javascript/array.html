@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array</title>
+</head>
+<body>
+    <script>
+        /* 
+        선언방식 => new Array, []
+        값의형식 => key : value 
+        값을 이용하려면 key를 사용해야함.
+        */
+        
+        let a = []; /* 배열을 선언해야지만 push를 사용 가능  */
+            a.push(10);
+            a.push(50);
+            a.push(60); /* =[]안에 한번에 입력해도 됨. */
+
+            a[2] = 1000; /* 값을 바꿀때 사용 */
+
+            console.log(a);
+            console.log(a[1]);
+            console.log(a.length);
+
+            let total = 0;
+            a.forEach(function(v, k){ /* forEach=배열만 사용할 수 있는 문법 | 순서 자리가 중요*/
+                total += v;
+                if(v==50){
+                    console.log(`값 50의 키는 ${k}다`)
+                }
+            });
+            console.log(total);
+            /* 
+            1. forEach 배열값을 모두 사용하기 위해 사용
+            2. 배열값이 매개변수로 사용가능 (배열값, 배열키, 배열전체) 
+            */
+    </script>
+
+    <dl> <!-- 자식요소로 div, dt, dd만 허용 -->
+        <!-- <div>
+            <dt>이름</dt>
+            <dd></dd>
+        </div>
+        <div>
+            <dt>이름</dt>
+            <dd></dd>
+        </div>
+        <div>
+            <dt>이름</dt>
+            <dd></dd>
+        </div> -->
+    </dl>
+    <script>
+        let name=['홍홍홍', '석석석', '현현현'];
+        const elDd = document.querySelector('dl');
+        let tag=''; /* 할당연산자를 사용할 경우에는 '' 문자열을 뜻하는 빈공간을 만들어줘야함 */
+        
+        name.forEach(function(v,k){
+            if('현현현'!= v){
+                tag += `<div>
+                            <dt>이름</dt>
+                            <dd>${v}</dd>
+                        </div>`;
+            }
+        });
+        elDd.innerHTML = tag;
+        
+        /* console.log(elDd);
+        console.log(name); */
+        /*  elDd[0].innerText=name[0];
+        elDd[1].innerText=name[1];
+        elDd[2].innerText=name[2]; */
+
+        /* elDd.forEach(function(v,k){
+            elDd[k].innerText=name[k];
+        }) */
+    </script>
+
+    <div class="list">
+        
+    </div>
+    <script>
+        let photo=["./img/12.jpg","./img/13.jpg","./img/14.jpg"]
+        const li =document.querySelectorAll('list')
+        let tag
+        photo.forEach(function(v,k){
+
+        })
+    </script>
+</body>
+</html>

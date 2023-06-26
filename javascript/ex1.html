@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+</head>
+<body>
+    
+
+    <script>
+        let html = 90, css=100, js=10;
+        let total= html+css+js;
+
+        let avg = total/3;
+        let a = avg >=90;
+        let b = (avg>=80) && (avg < 90);
+        /* 토탈값이 200이상이면 합격 / 불합격 */
+
+    /*    if(total>=200){ 
+            console.log('합격');
+        }else{
+            console.log('불합격');
+        } */
+
+        if(a){ 
+            console.log('A');
+        }else if(b){
+            console.log('B');
+        }else{
+            console.log('c');
+        };
+    </script>
+
+    <script>
+        let age = prompt('당신의 나이는 몇살 입니까?');
+        
+        let mg;
+        /* console.log(age); */
+        if(age>=19){
+            mg='어서오세요';
+        }else{
+            mg='나가';
+        }
+        console.log(mg);
+    </script>
+</body>
+</html>
