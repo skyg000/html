@@ -83,12 +83,16 @@
         
     </div>
     <script>
-        let photo=["./img/12.jpg","./img/13.jpg","./img/14.jpg"]
-        const li =document.querySelectorAll('list')
-        let tag
-        photo.forEach(function(v,k){
+        let photo=["./img/12.jpg","./img/13.jpg","./img/14.jpg"];
+        let imgHTML='';
+        const elList = document.querySelector('list');
 
+        photo.forEach(function(v,k){
+            imgHTML += `<img src='${v}'>`;
         })
+        elList.innerHTML=imgHTML;
     </script>
+
+    
 </body>
 </html>
