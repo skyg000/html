@@ -141,8 +141,8 @@
             ex4Button = document.querySelectorAll('.ex4 button');
 
             ex4Button.forEach(function(btn,key){
-                btn.onclick =function(){ /* this=발생된 이벤트의 타겟을 가리킴 */
-                    let data = this.innerText; 
+                btn.onclick =function(){ 
+                let data = this.innerText; /* this=발생된 이벤트의 타겟을 가리킴 */ 
                     if(data !='결과보기'){
                         ex4Result.innerText +=data;
                     }else{
@@ -185,6 +185,8 @@
             alert('아이디가 틀립니다.');
     }
     }
+
+
 </script>
 </body>
 </html>
