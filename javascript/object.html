@@ -175,7 +175,7 @@
                     링크: 'https://naver.com'
                 }
             ]
-        },tag="";
+        }
 
         for(const k in art){
             elP.innerHTML += `<button>${k}</button>`;
@@ -184,10 +184,14 @@
 
         elBtn.forEach(function(btn,k){
             btn.onclick = function(){
-                tag = "";
-                let key = this.innerText;
-                art[key].forEach(function(obj){
-                    tag += `<a href="#">
+            let key = this.innerText;
+            printFun(key);
+            }
+        })
+        let printFun = function(key){
+            elList.innerHTML = "";
+            art[key].forEach(function(obj){
+                    elList.innerHTML += `<a href="#">
                                         <figure>
                                             <p>
                                                 <img src="${obj.이미지}" width="200">
@@ -200,11 +204,66 @@
                                         </figure>
                                     </a>`;
                 });
-                elList.innerHTML = tag;
-            }
-        })
+        }
+        printFun('디자인');
+    </script>
+
+    <article>
+        <h2>object 출력</h2>
+        <div class="popol">
+            <div> </div>
+            <div> </div>
+            <div> </div>
+        </div>
+    </article>
+
+    <script>
+        const elPopol = document.querySelectorAll('.popol > div ');
+        let num = 0;
+        /* elPopol[0].innerHTML += obj.작품명 */  /* 데이터중심 */
+        /*  for(const data in art ){
+            art[data].forEach(function(obj,k){
+                elPopol[num].innerHTML += `<a href="#">
+                                        <figure>
+                                            <p>
+                                                <img src="${obj.이미지}" width="200">
+                                            </p>
+                                            <figcaption>
+                                                작품명: 삼성디자인 시안
+                                                제작기간: 5일
+                                                요약설명: 사용성이 편리하고 심플한 컨셉
+                                            </figcaption>
+                                        </figure>
+                                    </a>`;
+            
+        });
+        num++;
+    } */
+
+        let dataPro = Object.keys(art); 
+        /* 해당 object의 키값을 배열상태로 출력 */
         
-        
+    /* 선택자 중심 */
+        elPopol.forEach(function(ele,k){ 
+            let key = dataPro[k]
+            art[ key ].forEach(function(obj){
+                ele.innerHTML += `<a href="#">
+                                        <figure>
+                                            <p>
+                                                <img src="${obj.이미지}" width="200">
+                                            </p>
+                                            <figcaption>
+                                                작품명: 삼성디자인 시안
+                                                제작기간: 5일
+                                                요약설명: 사용성이 편리하고 심플한 컨셉
+                                            </figcaption>
+                                        </figure>
+                                    </a>`;  
+
+            })
+        });
+
+
     </script>
 </body>
 </html>
