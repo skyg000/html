@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <script>
+        /* function 네이밍(){ }
+        let 네이밍 = function(){ } */
+        let fun = function(값1, ...값){  /* ... = 값이 많을 때 사용하면 배열로 받음 | 해당 값만 받고 싶을때는 값1입력하여 받음*/
+            console.log(값1, 값);
+        }
+        fun(1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000);
+    </script>
+
+    <article>
+        <h2>구구단</h2>
+        <div class="btn">
+            <button> 전체 </button>
+            <button> 2 </button>
+            <button> 3 </button>
+            <button> 4 </button>
+            <button> 5 </button>
+            <button> 6 </button>
+            <button> 7 </button>
+            <button> 8 </button>
+            <button> 9 </button>
+        </div>
+        <div class="result">
+
+        </div>
+    </article>
+    <script>
+        /* let i=0;
+        while(i<10){
+            console.log(`${2}x${i}=${2*i}`);
+            i++;
+        } */
+        
+        /* for(let i=1; i<10; i++){
+            console.log(`${2}x${i}=${2*i}`);
+        } */
+
+        const elBtn = document.querySelectorAll('.btn button'),
+                elRes = document.querySelector('.result');
+                
+        elBtn.forEach(function(btn,k){
+            btn.onclick = function(){
+                let num = this.innerText;
+                elRes.innerHTML="";
+                
+                if(num==='전체'){
+                    all();
+                }else{
+                    gugudan(num);    
+                }
+            }
+        })
+        let str = '';
+        let gugudan =function(a){
+            str += `<p><b>${a}단</b><br>`;
+            for(let i=1; i<10; i++){
+                str+=(`${a}x${i}=${a*i}<br>`);
+            }
+            str += `</p>`;
+            elRes.innerHTML= str;
+        }
+        let all = function(){
+            for(let i=2; i<10; i++){
+                gugudan(i);
+            }
+    }
+        
+
+
+    </script>
+
+    <article class="count">
+        <h2>setInterval / count</h2>
+        <div> 1000</div>
+        <div> 600</div>
+    </article>
+    <script>
+        const elCount = document.querySelectorAll('.count div');
+        
+        let count = [];
+        elCount.forEach(function(el){
+            count.push(Number(el.innerText));
+            el.innerHTML = 0;
+            })
+        let startCount = function(n){
+            let sNum = 0;
+            setInterval(function(){  /* setInterval=스크립트가 스스로 실행 */
+                if(sNum < count[n]) sNum++;
+                elCount[n].innerHTML = sNum;
+            },10)
+        }
+        elCount.forEach(function(v,k){
+            startCount(k)
+        })
+        
+    </script>
+</body>
+</html>
