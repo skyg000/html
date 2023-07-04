@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random</title>
+</head>
+<body>
+    <script>
+        /* Math.random() */
+        /* 반올림 ( Math.round( ) ),
+        소수점제거 ( Math.floor( ) ),
+        무조건반올림 ( Math.ceil( ) ) */
+
+        let ran = Math.random() * 10
+        console.log(Math.round(ran));
+    </script>
+
+    <script>
+        let bg = function(n){ /* 여러번 사용하기 떄문에 함수로 묶어둠 */
+            return Math.round( Math.random()*n)
+        }
+        const elBody = document.querySelector('body')
+        elBody.style.background = `rgba(${bg(255)},${bg(255)},${bg(255)},${bg(100)}%)` /* 목표수치를 정해서 입력해줄수있음 */
+        /* console.log(bg()); */
+    </script>
+
+    <article class="random-img">
+        <h2>radom이미지</h2>
+        <img src="../img/11.jpg">
+    </article>
+    <script>
+        /* Math.random() = 숫자를 발생시키는 명령어 */
+        /* 배열 형식의 값들은 해당 값을 []를 통해 값을 불러와야함 */
+        let imgs = ['11.jpg','12.jpg','15.jpg','14.jpg']
+            
+            const elRandom=document.querySelector('.random-img img')
+
+            let num = Math.round( Math.random() * 3 )
+
+           /*  elRandom.src = `../img/${imgs[ num ]}`; */
+            /* elRandom.getAttribute ('src') */
+            elRandom.setAttribute ('src',  `../img/${imgs[ num ]}`)/*  =값을 수정할 때 사용 */
+            /* 작업을 분할하여 입력해 줌 나한테 맞는 방식으로 */
+    </script>
+
+    <script>
+        let ranNum = function(n){
+            return Math.round(Math.random()*n);
+        }
+        
+        let num1 = ranNum(10000);
+        let num2 = ranNum(10000);
+        console.log( 
+            `${num1} + ${num2} = ${num1+num2}`  
+            )
+    </script>
+
+    <article class="ex1">
+        <h2>10초 동안 5문제 맞추기</h2>
+        <div>
+            <p>
+                10초
+            </p> 
+        </div>  
+        <ul>
+            <li>
+                <p>
+                    문제1:  1 + 1 = 2
+                </p>
+                <button data-name="O"> O </button>
+                <button data-name="X"> X </button>
+            </li>
+            <li>
+                <p>
+                    문제2: 2 + 2 = 4
+                </p>
+                <button data-name="O"> O </button>
+                <button data-name="X"> X </button>
+            </li>
+            <li>
+                <p>
+                    문제3: 3 + 3 = 6
+                </p>
+                <button data-name="O"> O </button>
+                <button data-name="X"> X </button>
+            </li>
+            <li>
+                <p>
+                    문제4: 44444444444 * 444444444444 = 888
+                </p>
+                <button data-name="O"> O </button>
+                <button data-name="X"> X </button>
+            </li>
+            <li>
+                <p>
+                    문제5: 5 + 5 = 10
+                </p>
+                <button data-name="O"> O </button>
+                <button data-name="X"> X </button>
+            </li>
+
+        </ul>
+        <div class="result">
+            <p>정답 수: <code></code> <code></code>점 </p>
+        </div>
+    </article>
+    <script>
+        const elEx = document.querySelector('.ex1 div > p');
+        
+        let num4 = 0;
+        let inVal = setInterval(function(){
+                if(num4 < 10) {
+                num4++;
+                elEx.innerText = `${num4}초`;
+                }
+            },1000)
+
+        const elP = document.querySelectorAll('li code'),
+                elBtn1 = document.querySelectorAll('li button');
+                
+                let name = '정답입니다.',
+                    name1 = '오답입니다.';
+            elBtn1.forEach(function(){
+                elBtn1[0].onclick = function(){
+                let aa = confirm(name);
+            },elBtn1[1].onclick = function(){
+                let aa = confirm(name1);
+            }
+        })
+
+            
+        
+        
+
+
+    </script>
+</body>
+</html>
