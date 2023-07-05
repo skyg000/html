@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/class.css">
+    <title>class</title>
+</head>
+<body>
+    <article class="s1 ">
+        <h2> class(add, remove, toggle, contains) </h2>
+        <div>
+            콘텐츠가 움직임.
+        </div>
+    </article>
+    <script>
+        const elS1 = document.querySelector('.s1')
+        elS1.onclick =function(){
+            elS1.classList.toggle('on'); /* add, remove 역할을 toggle이 해줌 상황에 따라서 사용해야 함 */
+
+            /* if(elS1.classList.contains('on')){
+                elS1.classList.add('on') 클래스 추가 | 클래스로 인식을 하기 때문에 . 사용 안해도됨
+                elS1.classList.remove('on') 클래스 삭제
+            }else{
+                elS1.classList.add('on') 
+                elS1.classList.remove('off') 클래스 삭제
+            } */
+        }
+            /* elS1.className += '  dkdk';
+            elS1.className = 's1 dkdk'; */
+    </script>
+
+    <article class="s2">
+        <h2>클릭버튼 활성화</h2>
+        <div>
+            <button class="active">01</button>
+            <button data-name="teb2">02</button>
+            <button>03</button>
+        </div>
+        <div class="contents">
+            <div class="active"> 01 콘텐츠 </div>
+            <div data-name="teb2"> 02 콘텐츠 </div>
+            <div> 03 콘텐츠 </div>
+        </div>
+    </article>
+    <!-- 순서가 달라지더라도 클래스 속성을 지정하여 사용하면 찾을 수 있음 -->
+    <script>
+        const elS2 = document.querySelectorAll('.s2 button');
+        const elCon = document.querySelectorAll('.contents div');
+        let num = 0;
+        elS2.forEach(function(el,key){
+            el.onclick = function(){
+                elS2[num].classList.remove('active');
+                this.classList.add('active');
+            
+                elCon[num].classList.remove('active');
+                elCon[key].classList.add('active');
+                num = key;   
+                /* let dataname = this.dataset.name; */
+            }
+        })  
+    </script>
+
+    <article class="s3">
+        <h2>버거메뉴
+            <div>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </h2>
+        <nav>
+            <a href="#"> 메뉴 1 </a>
+            <a href="#"> 메뉴 2 </a>
+            <a href="#"> 메뉴 3 </a>
+            <a href="#"> 메뉴 4 </a>
+            <a href="#"> 메뉴 5 </a>
+        </nav>
+    </article>
+    <script>
+        const elNav = document.querySelector('.s3 h2 div'),
+                elA = document.querySelectorAll('.s3');
+                
+                elNav.onclick = function(){
+                    elNav.classList.toggle('active')
+                };
+                
+        
+    </script>
+</body>
+</html>

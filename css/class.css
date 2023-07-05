@@ -1,0 +1,72 @@
+.s1{
+    color: black;
+}
+.s1 div{
+    transition: 1s;
+    transform: translateX(0%);
+}
+.s1.on{ /* 띄워쓰기 안하고 붙여쓰면 자기자신 */
+    color: red;
+}
+.s1.on h2{
+    font-size: 3rem;
+}
+.s1.on div{
+    transform: translateX(50%);
+}
+
+article{
+    width: 500px;
+    margin: 200px auto;
+}
+.s2 button.active{
+    background-color: black;
+    color: white;
+}
+
+.s2 .contents div{
+    border: 1px solid black;
+    display: none;
+    padding: 50px;
+}
+.s2 .contents div.active{
+    display: block;
+}
+
+.s3 h2 > div {
+    margin-top: 20px;
+    width: 30px;
+    height: 24px;
+    position: relative;
+}
+.s3 h2 > div span{
+    width: 100%;
+    border: 1px solid violet;
+    position: absolute;
+    left: 0;
+    transform: rotate();
+    transition: 0.5s;
+}
+
+
+.s3 h2 > div span{top:calc(50%);}
+.s3 h2 > div span:nth-child(1){transform: rotate(45deg);}
+.s3 h2 > div span:nth-child(2){opacity: 0;}
+.s3 h2 > div span:nth-child(3){transform: rotate(-45deg);}
+
+.s3.active nav{transform: translateX(0%);}
+
+.s3 nav{
+    position: fixed;
+    left:0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-100%);
+    transition: 0.5s;
+}
