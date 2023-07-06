@@ -84,9 +84,58 @@
                 
                 elNav.onclick = function(){
                     elNav.classList.toggle('active')
-                };
-                
-        
+                };     
     </script>
+
+    <article class="s4">
+        <h2>아코디언</h2>
+        <ul>
+            <li>
+                <p> Q . JS 셀렉터를 잡는 방법이 무엇입니까? </p>
+                <div>
+                    document.querySelector,
+                    getElementId, getElementsByClassname... 
+                </div>
+            </li>
+            <li>
+                <p> Q . JS 셀렉터를 잡는 방법이 무엇입니까? </p>
+                <div>
+                    document.querySelector,
+                    getElementId, getElementsByClassname... 
+                    document.querySelector,
+                    getElementId, getElementsByClassname... 
+                </div>
+            </li>
+            <li>
+                <p> Q . JS 셀렉터를 잡는 방법이 무엇입니까? </p>
+                <div>
+                    document.querySelector,
+                    getElementId, getElementsByClassname... 
+                    document.querySelector,
+                    getElementId, getElementsByClassname... 
+                    document.querySelector,
+                    getElementId, getElementsByClassname... 
+                </div>
+            </li>
+        </ul>
+    </article>
+
+    <script>
+        const elS4 = document.querySelectorAll('.s4 li');
+        let s4Num = 0;
+        elS4.forEach(function(el,k){
+            el.onclick =function(){
+                if(this.classList.contains('active')){
+                    elS4[s4Num].classList.remove('active')
+                }else{
+                    elS4[s4Num].classList.remove('active')
+                    this.classList.add('active')
+                    s4Num = k;
+                    }
+            }
+        })
+    </script>
+    
+    
 </body>
 </html>

@@ -70,3 +70,37 @@ article{
     transform: translateX(-100%);
     transition: 0.5s;
 }
+
+.s4 ul{
+    padding: 0;
+    list-style: none;
+}
+.s4 li{
+    border: 1px solid #ddd;
+    padding: 20px 0 ;
+}
+.s4 div{
+    background-color: beige;
+    padding: 0px 20px;
+    overflow: hidden;
+    max-height: 0px;
+    transition: 0.3s ease-out;
+}
+.s4 li p{
+    position: relative;
+}
+.s4 li p::after{
+    content: 'V';
+    position: absolute;
+    right: 10px; 
+    top: 0;
+    transition: 0.5s;
+    
+}
+.s4 li.active div{
+    padding: 20px ;
+    max-height: 400px;
+}
+.s4 li.active p::after{
+    transform: rotate(-180deg);
+}

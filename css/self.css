@@ -161,12 +161,12 @@ header {
 
 /* $mobile: 480px;
 $mobile:(480px,768px); */
-@media (max-width:767px) {
+@media (max-width:770px) {
   body {
     background-color: yellow;
   }
 }
-@media (max-width:480px) {
+@media (max-width:412px) {
   header {
     width: 100%;
     position: sticky;
@@ -176,12 +176,12 @@ $mobile:(480px,768px); */
 }
 /* $mobile: 480px;
 $mobile:(480px,768px); */
-@media (max-width:767px) {
+@media (max-width:770px) {
   body {
     background-color: yellow;
   }
 }
-@media (max-width:480px) {
+@media (max-width:412px) {
   header {
     width: 100%;
     position: sticky;
