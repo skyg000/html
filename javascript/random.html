@@ -69,67 +69,79 @@
                 <p>
                     문제1:  1 + 1 = 2
                 </p>
-                <button data-name="O"> O </button>
-                <button data-name="X"> X </button>
+                <button data-name="정답"> O </button>
+                <button data-name="오답"> X </button>
             </li>
             <li>
                 <p>
                     문제2: 2 + 2 = 4
                 </p>
-                <button data-name="O"> O </button>
-                <button data-name="X"> X </button>
+                <button data-name="정답"> O </button>
+                <button data-name="오답"> X </button>
             </li>
             <li>
                 <p>
                     문제3: 3 + 3 = 6
                 </p>
-                <button data-name="O"> O </button>
-                <button data-name="X"> X </button>
+                <button data-name="정답"> O </button>
+                <button data-name="오답"> X </button>
             </li>
             <li>
                 <p>
                     문제4: 44444444444 * 444444444444 = 888
                 </p>
-                <button data-name="O"> O </button>
-                <button data-name="X"> X </button>
+                <button data-name="정답"> X </button>
+                <button data-name="오답"> O </button>
             </li>
             <li>
                 <p>
                     문제5: 5 + 5 = 10
                 </p>
-                <button data-name="O"> O </button>
-                <button data-name="X"> X </button>
+                <button data-name="정답"> O </button>
+                <button data-name="오답"> X </button>
             </li>
 
         </ul>
         <div class="result">
-            <p>정답 수: <code></code> <code></code>점 </p>
+            <p>정답 수: (<code></code>)점 </p>
         </div>
     </article>
     <script>
         const elEx = document.querySelector('.ex1 div > p');
-        
         let num4 = 0;
         let inVal = setInterval(function(){
                 if(num4 < 10) {
                 num4++;
-                elEx.innerText = `${num4}초`;
+                elEx.innerText = `${num4}초`
                 }
             },1000)
 
-        const elP = document.querySelectorAll('li code'),
-                elBtn1 = document.querySelectorAll('li button');
+        const elP = document.querySelectorAll('.ex1 p'),
+                elBtn1 = document.querySelectorAll('.ex1 button'),
+                elResult = document.querySelector('.result code');
                 
                 let name = '정답입니다.',
                     name1 = '오답입니다.';
-            elBtn1.forEach(function(){
-                elBtn1[0].onclick = function(){
-                let aa = confirm(name);
-            },elBtn1[1].onclick = function(){
-                let aa = confirm(name1);
+                
+            elBtn1.forEach(function(btn,key){
+                btn.onclick = function(){
+                    let num5 = this.innerText
+                    if(num5 == 'O'){
+                        let aa = confirm(name)
+                    }else if(num5 == 'X'){
+                        let aa1 = confirm(name1)
+                        num5 = key
+                        }
+                    }
+                    })
+        function count(button){
+            let numB = elResult.innerText;
+            if(button == 'O'){
+                numB = parseInt(numB) +1;
             }
-        })
-
+            elResult.innerText = `${numB}`;
+        }
+                    
             
         
         
