@@ -90,8 +90,8 @@
                 <p>
                     문제4: 44444444444 * 444444444444 = 888
                 </p>
-                <button data-name="정답"> X </button>
-                <button data-name="오답"> O </button>
+                <button data-name="정답"> O </button>
+                <button data-name="오답"> X </button>
             </li>
             <li>
                 <p>
@@ -134,12 +134,13 @@
                         }
                     }
                     })
+        let count1 = 0;
         function count(button){
             let numB = elResult.innerText;
             if(button == 'O'){
-                numB = parseInt(numB) +1;
+                count1+=1;
             }
-            elResult.innerText = `${numB}`;
+            elResult.innerText = `<p>정답 수: (${numB})점 </p>`;
         }
                     
             

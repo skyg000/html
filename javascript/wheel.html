@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wheel</title>
+</head>
+<body style="height: 100vh; overflow: hidden;">
+    <main>
+        <section>01</section>
+        <section>02</section>
+        <section>03</section>
+        <section>04</section>
+        <section>05</section> 
+    </main>
+    <aside>
+        
+    </aside>
+    <style>
+        section{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section:nth-child(2n){
+            background-color: rgb(252, 166, 244);
+        }
+        aside{
+            position: fixed;
+            right: 5%;
+            top: 50%;
+        }
+        aside a{
+            width: 10px;
+            height: 10px;
+            margin: 10px 0;
+            background-color: black;
+            border-radius: 100%;
+            display: block;
+        }
+    </style>
+    <script>
+        const elSection = document.querySelectorAll('section'),
+                elAside = document.querySelector('aside');
+        let move = 0
+        
+        elSection.forEach(function(section,key){ 
+            elAside.innerHTML += `<a></a>`
+            section.addEventListener('wheel',function(e){
+                    conmove(key)
+                }) 
+            })   
+            function conmove(key){
+            try{
+                if(event.wheelDelta < 0){
+                    move = elSection[key].nextElementSibling.offsetTop
+                }else{
+                    move = elSection[key].previousElementSibling.offsetTop
+                }
+                }catch{ /* try와 함께 같이 사용해야함 */
+
+                }finally{ /* 무조건 실행 */
+                    window.scrollTo({
+                        top:move,
+                        left:0,
+                        behavior:'smooth'
+                    })
+                }
+            }
+        const elAsidea = document.querySelectorAll('aside a');
+        let move1 = 0
+                elAsidea.forEach(function(sec,key){ 
+                    sec.addEventListener('click',function(e){
+                            conmove1(key)
+                        }) 
+                    })   
+        function conmove1(key){
+        try{
+            if(event < 0){
+                move1 = elAsidea[key].offsetTop
+            }else{
+                move1 = elSection[key].offsetTop
+            }
+            }catch{ /* try와 함께 같이 사용해야함 */
+
+            }finally{ /* 무조건 실행 */
+                window.scrollTo({
+                    top:move,
+                    left:0,
+                    behavior:'smooth'
+                })
+            }
+        }
+    </script>
+</body>
+</html>
