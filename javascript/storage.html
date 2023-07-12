@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>storage</title>
+</head>
+<body>
+    <script>
+
+        /* setItem, getItem,removeItem,clear */
+
+        /* LocalStorage.num = 1000;  */
+        window.onclick = function(){
+            sessionStorage.setItem('num', 2000);
+            sessionStorage.setItem('num2', 2000);
+            /* localStorage.clear(); */
+            /* localStorage.removeItem('num'); */
+            console.log(
+                sessionStorage.getItem('num')
+            );
+        }
+    </script>
+</body>
+</html>

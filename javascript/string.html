@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    charAt() = 특정위치에 있는 문자를 반환한다.
+    substr(start, length) = 문자열에서 특정 부분만 골라낼 때 사용 | 숫자로 찾음 | 
+    indexOf(value, start) = 특정문자열이 처음으로 나타나는 위치를 반환함 | 찾을 문자와 어디서 부터 찾을지 지정가능 ('A',1) | 결과값을 숫자로 줌
+    lastindexOf(value, start) = 특정문자열이 마지막으로 나타나는 위치를 반환함
+    split = 문자열을 분할하는 메서드 (,를 기점으로 배열을 만듬)
+    replace(문자열, 바꿀 문자열) = 특정 문자열을 찾아 다른 문자열로 바꾸는 메서드 
+    match (문자열 or 정규 표현식) = 정규 표현식에 맞는 문자열을 찾아서 배열 객체로 반환함 -->
+
+    <article>
+        <h2> 이미지명 바꾸기  </h2>
+        <img src="../img/12.jpg" id="image">
+    </article>
+    <a href="#test-1">test1</a>
+    <a href="#test-2">test2</a>
+    <script>
+        let str = image.getAttribute('src');
+        let startIndex = str.lastIndexOf('/');
+        let endIndex = str.lastIndexOf('.');
+        let findStr = str.slice(startIndex+1, endIndex);
+        let changStr = str.replace(findStr,'15');
+
+        str = changStr;
+        console.log(changStr);
+        let str2 = image.src;
+        let startIndex2 = str.lastIndexOf('.');
+        let findStr2 = str.slice(startIndex2);
+        let changStr2 = str2.replace('.jpg','_on.jpg');
+        str2 = changStr2;
+        console.log(changStr2);
+
+        const elA = document.querySelectorAll('a');
+        elA.forEach(function(aTag){
+            aTag.onclick = function(e){
+                setTimeout(function(){
+                    console.log(
+                    location.hash.split('-')[1]
+                    );
+                })
+            }
+        })
+        let jumin = '7701021548212';
+        let num = [2,3,4,5,6,7,8,9,2,3,4,5];
+        let total = 0;
+        num.forEach(function(n,k){
+            total += n * jumin[k];
+        })
+        console.log(
+            (11 - (total%11)) %10
+        );
+        
+        /* hash= # 뒤에 있는 문자열을 가지고 옴 */
+
+        /* 
+        str.substring(start, end)
+        str.slice(start, end) 
+        replace = 찾아낸 문자를 바꿔주는 명령어*/
+        
+    </script>
+</body>
+</html>

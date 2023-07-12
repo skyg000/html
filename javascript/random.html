@@ -122,26 +122,29 @@
                 
                 let name = '정답입니다.',
                     name1 = '오답입니다.';
-                
+                    let count1 = 0;
             elBtn1.forEach(function(btn,key){
                 btn.onclick = function(){
                     let num5 = this.innerText
-                    if(num5 == 'O'){
+                    if(num5 == 'O' ){
                         let aa = confirm(name)
+                        count1+=1;
+                        console.log(count1);
                     }else if(num5 == 'X'){
                         let aa1 = confirm(name1)
                         num5 = key
                         }
                     }
+                    let numB = elResult.innerText;
+                    elResult.innerText = `${count1}`;
                     })
-        let count1 = 0;
+/* 
         function count(button){
             let numB = elResult.innerText;
             if(button == 'O'){
-                count1+=1;
+
             }
-            elResult.innerText = `<p>정답 수: (<code>${numB}</code>)점 </p>`;
-        }
+        } */
                     
             
         

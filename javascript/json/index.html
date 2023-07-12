@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        <h2>데이터 출력</h2>
+        <div class="list">
+            <p>이름 </p>
+        </div>
+    </article>
+    <script>
+         /* 스크립트에서 json을 호출하는법 | */
+        /* fetch('./data.json') 
+
+        .then(function(res){
+            return res.json()
+        })
+        .then(function(data){
+            console.log(
+                data.member,
+                data.member[0].name
+                )
+        }) */
+/* =============================== ( => 함수 사용 법 ) ======================================================= */
+        fetch('./data.json')
+        .then(res => res.json()) 
+        /*
+        {}사용 시 return을 사용해야 하는데 {}를 사용하지 않을때는 return이 자동으로 실행 시켜줌 | 
+        매게변수가 여러게일 경우 ()를 한번 더 사용하여 여러개를 쓸수 있음*/ 
+        .then(data => {
+            console.log(
+                data.member,
+                data.member[0].name
+                )
+                const li = document.querySelector('.list p')
+            data.member.forEach(obj => {
+                li.innerText += obj.name; 
+                
+            });
+        })
+        /* ( => ) 함수는 this를 사용 못함 */
+
+
+
+        /* 
+        .then(문자열 -> 객체)
+        .then(겍체를 활용하여 프로그래밍) */
+    </script>
+</body>
+</html>

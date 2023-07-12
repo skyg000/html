@@ -1,0 +1,14 @@
+header{
+    background-color: black;
+    padding: 20px 0;
+    text-align: center;
+}
+header a{
+    padding: 0 10px;
+    color: white;
+}
+main{
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 200px;
+}
