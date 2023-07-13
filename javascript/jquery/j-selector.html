@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <ul>
+        <li>01</li>
+        <li>02</li>
+        <li>03</li>
+        <li><img src="../img/11.jpg"></li>
+    </ul>
+    <!-- ( $ ) = jquery를 나타냄 -->
+    <!-- $('선택자').매서드(); -->
+    <!-- 메소드 뒤에 {}를 사용(객체 형태) 
+        선택자 선언 후 여러 이벤트 입력 가능 
+        단일선택자와 다중선택자를 잡는 방법이 다르지않음-->
+    <script>
+        $('body')
+        .css({
+            "background-color":"yellow",
+            fontSize:"50px" /* -을 빼고 두번째를 대문자로 입력 시 문자처리 */
+        })
+        .on("click",function(){
+            alert('aajkhsadjkh')
+        })
+        /* .addEventLintener('click',function(){}) 과 같은 사용법 */
+
+        $("li")
+        .css({
+            border:"2px solid black"
+        })
+        .on('click',function(){
+            $(this).css('color','red')
+            console.log(
+                $(this).index(),
+                $(this).text(), /* 텍스트 변경 가능 | ()안에 'ㅁㄴㅇㅁ' 입력하면 변경가능*/
+                $(this).html(),
+                $(this).attr('class','abc'), /* attr = 속성값 | 클래스도 추가 가능 |  */
+                $(this).find('img').attr('src')
+                );
+        })
+        /* 
+        EX)
+        <div class= "a">
+            <p><span class="b">01</span></p>
+        </div>
+        $('.a').find('.b')
+        .html('02')
+        .attr('class')
+        .css({color:'red'})
+        자식 요소를 찾을때 find를 이용해서 찾아서 변경가능 
+        
+        $('a').on('click',function(){ on을 사용하면 다중이벤트를 입력할 수 있음
+            ${this}.index()
+            ${this}.text()
+            ${this}.html()
+            ${this}.css()
+            ${this}.attr()
+        }) 
+        */
+
+    </script>    
+</body>
+</html>

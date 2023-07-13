@@ -122,6 +122,7 @@
                 
                 let name = '정답입니다.',
                     name1 = '오답입니다.';
+                    
                     let count1 = 0;
             elBtn1.forEach(function(btn,key){
                 btn.onclick = function(){
@@ -136,7 +137,7 @@
                         }
                     }
                     let numB = elResult.innerText;
-                    elResult.innerText = `${count1}`;
+                    numB.innerText = `${count1}`;
                     })
 /* 
         function count(button){
