@@ -67,7 +67,8 @@
         <ul>
             <li>
                 <p>
-                    문제1:  1 + 1 = 2
+                    <img src="../img/11.jpg"><br>
+                    문제1:  이 캐릭터는 짱구이다?
                 </p>
                 <button data-name="정답"> O </button>
                 <button data-name="오답"> X </button>
@@ -119,11 +120,9 @@
         const elP = document.querySelectorAll('.ex1 p'),
                 elBtn1 = document.querySelectorAll('.ex1 button'),
                 elResult = document.querySelector('.result code');
-                
-                let name = '정답입니다.',
-                    name1 = '오답입니다.';
-                    
-                    let count1 = 0;
+        let name = '정답입니다.',
+            name1 = '오답입니다.';
+        let count1 = 0;
             elBtn1.forEach(function(btn,key){
                 btn.onclick = function(){
                     let num5 = this.innerText
@@ -135,10 +134,16 @@
                         let aa1 = confirm(name1)
                         num5 = key
                         }
+                        elResult.innerText = count1;
                     }
-                    let numB = elResult.innerText;
-                    numB.innerText = `${count1}`;
+                    console.log(elResult);
                     })
+
+
+
+
+
+
 /* 
         function count(button){
             let numB = elResult.innerText;

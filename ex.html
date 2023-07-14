@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article class="ex1">
+        <h2>10초 동안 5문제 맞추기</h2>
+        <div>
+            <p>
+                10초
+            </p> 
+        </div>  
+        <ul>
+            <li>
+                <p>
+                    <img src="../img/17.jpg"><br>
+                    문제1:  이 캐릭터는 짱구이다?
+                </p>
+                <div class="btnbox">
+                <button data-name="정답"> O </button>
+                <button data-name="오답"> X </button>
+                </div>
+            </li>
+            <li>
+                <p>
+                    <img src="../img/15.jpg"><br>
+                    문제2: 이 캐릭터의 이름은 맹구이다?
+                </p>
+                <div class="btnbox">
+                <button data-name="정답"> O </button>
+                <button data-name="오답"> X </button>
+                </div>
+            </li>
+            <li>
+                <p>
+                    <img src="../img/21.jpg"><br>
+                    문제3: 이 캐릭터의 이름은 훈이다?
+                </p>
+                <div class="btnbox">
+                <button data-name="정답"> O </button>
+                <button data-name="오답"> X </button>
+                </div>
+            </li>
+            <li>
+                <p>
+                    <img src="../img/22.jpg"><br>
+                    문제4: 이 캐릭터의 이름은 흰둥이다?
+                </p>
+                <div class="btnbox">
+                <button data-name="정답"> O </button>
+                <button data-name="오답"> X </button>
+                </div>
+            </li>
+            <li>
+                <p>
+                    <img src="../img/23.jpg"><br>
+                    문제5: 이 집은 우리집이다?
+                </p>
+                <div class="btnbox">
+                <button data-name="정답"> O </button>
+                <button data-name="오답"> X </button>
+                </div>
+            </li>
+
+        </ul>
+        <div class="result">
+            <p>정답 수: (<code></code>)점 </p>
+        </div>
+    </article>
+    <style>
+        .ex1 h2{
+            text-align: center;
+        }
+        .ex1 div{
+            text-align: center;
+            font-size: 40px;
+        }
+        .ex1 ul{
+            display: flex;
+        }
+        .ex1 ul {
+            display: flex;
+        }
+        .ex1 ul li{
+            list-style: none;
+            
+        }
+        .ex1 ul li p{
+            text-align: center;
+        }
+        .ex1 ul li .btnbox{
+            text-align: center;
+        }
+        .ex1 img{
+            width: 350px;
+            height: 200px;
+            padding-right: 15px;
+        }
+        .result{
+            position: absolute;
+            right: 45%;
+            top: 55%;
+            font-size: 30px;
+        }
+    </style>
+    <script>
+        const elEx = document.querySelector('.ex1 div > p');
+        let num4 = 0;
+        let inVal = setInterval(function(){
+                if(num4 < 10) {
+                num4++;
+                elEx.innerText = `${num4}초`
+                }else{
+                    clearInterval(inVal);
+                    if(count1 >=4 ){
+                        confirm(name2)
+                    }else{
+                        confirm(name3)
+                    }
+                }
+            },1000)
+
+        const elP = document.querySelectorAll('.ex1 p'),
+                elBtn1 = document.querySelectorAll('.ex1 button'),
+                elResult = document.querySelector('.result code');
+        let name = '정확하군요~~~~.',
+            name1 = '정답~~~~~이 아닙니다.',
+            name2 = '어떻게 알았지? 실력이 대단하군....',
+            name3 = ' 다시 해봐~ 할 수 있을거야.';
+        let count1 = 0;
+            elBtn1.forEach(function(btn,key){
+                btn.onclick = function(){
+                    this.onclick = null;
+                    let num5 = this.innerText
+                    if(num5 == 'O' && count1 < 5 ){
+                        confirm(name)
+                        count1+=1;
+                        console.log(count1);
+                    }else if(num5 == 'X'){
+                        confirm(name1)
+                        num5 = key
+                    }
+                    elResult.innerText = count1;
+                }
+                
+            })
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+        
+        
+
