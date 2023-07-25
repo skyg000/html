@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="1000" height="900">
+        캔버스가 호환되지 않습니다. 다른 브라우저를 사용하세요.
+    </canvas>
+    <script>
+        const canvas =document.querySelector('canvas'),
+                ctx = canvas.getContext('2d');
+
+                ctx.fillRect(100,50,200,200);
+                ctx.strokeRect(100,300,200,200);
+                /* ctx.arc(x,y,r,star,end,direction) */
+                ctx.arc(200,650,100,0,Math.PI*2,false);
+                ctx.fill()
+    </script>
+</body>
+</html>

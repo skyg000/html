@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradient</title>
+</head>
+<body>
+    <article class="gradient">
+        <h2>gradient(linear/radial)</h2>
+        <div>linear-gradient</div>
+        <div>radial-gradient</div>
+        <div>conic-gradient</div>
+        <style>
+            article{
+                width: 50%;
+                margin: 100px auto;
+            }
+            .gradient div{
+                height: 300px;
+                margin: 100px auto;
+            }
+            .gradient div:nth-of-type(1){
+               /*  background: linear-gradient(to right 180deg , red 0%,yellow 30%); */
+                background: repeating-linear-gradient(red,red 10px, yellow 10px , yellow 20px); /* 패턴만들때 사용가능 */
+            }
+            .gradient div:nth-of-type(2){
+                background: radial-gradient(circle farthest-corner at 10px 10px, red 30%, orange, black );
+            }
+            .gradient div:nth-of-type(3){
+                width: 300px;
+                background: conic-gradient(at 30% 30%, red 10%, orange 0% );
+            }
+        </style>
+    </article>
+
+    <article class="str-dot">
+        <h2>긴 문자 뒤에 점찍기</h2>
+        <div> 
+            24일(현지시간) 뉴욕타임스(NYT)에 따르면 라지 체티 하버드대 경제학 교수팀이 미국 명문대 입시 결과를 추적한 결과 미국 대학입학자격시험(SAT) 점수가 동일할 경우 경제력 상위 1% 가정의 수험생이 그렇지 않은 수험생들보다 합격 가능성이 34% 높은 것으로 나타났다.
+        </div>
+        <div>
+            국무총리 소속 대테러센터는 24일 “테러 협박 및 위해 첩보가 입수되지 않았고, 인명피해도 없어 테러 혐의점이 없는 것으로 확인했다”고 밝혔다. 지난 20일 울산 장애인 복지시설에서 최초 신고 접수된 사건과 관련해서도 소방·경찰 등 초동 출동 기관이 우편물을 수거해 1차 검사한 결과 화학·생물학·방사능 관련 물질이 검출되지 않았다고 설명했다. 25일 오전 5시 현재 의심 우편물로 신고 접수된 2793건 가운데 1832건은 오인 신고나 단순 상담이었던 것으로 확인됐다.
+        </div>
+        <style>
+            .str-dot div{
+                margin: 100px auto;
+            } 
+            .str-dot div:nth-of-type(1){/* 1줄 점찍기 */
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis; /* 부모의 값을 넘어가는 텍스트를 점으로 나타내주는 명령어 */
+            }
+            .str-dot div:nth-of-type(2){ /* 여러줄 */
+                display: -webkit-box;
+                -webkit-box-orient: vertical; /* 박스를 세로로 바꾸는 명령어 */
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                
+            }
+        </style>
+    </article>
+
+    <article class="filter">
+        <h2>filter(blur, brightness, grayscale, drop-shadow)</h2>
+        <div>
+            blur
+        </div>
+        <div>
+            <img src="./img/sp_main.30918f90.png">
+        </div>
+        <style>
+            .filter div{
+                margin: 50px 0;
+            }
+            .filter div:nth-of-type(1){
+                font-size: 3rem;
+                font-weight: bolder;
+                -webkit-text-stroke: 1px red;
+                -webkit-text-fill-color:transparent
+            }
+            .filter div:nth-of-type(2){
+                filter:drop-shadow(5px 5px 0px red) 
+                grayscale(100%) 
+                blur(4px)
+                brightness(50%);
+                transition: 3s;
+            }
+            .filter div:nth-of-type(2):hover{
+                filter:drop-shadow(5px 5px 0px red) 
+                grayscale(0%) 
+                blur(0px)
+                brightness(100%)
+            }
+        </style>
+    </article>
+
+    <article class="mix">
+        <h2>mix-blend-mode</h2>
+        <div>
+            부모배경색과 자식배경색을 혼합
+        </div>
+        <style>
+            .mix{
+                background-color: rgba(240, 240, 10, 0.933);
+                
+                position: relative;
+            }
+            .mix div{ 
+                color: white;
+                font-size: 2rem;
+                font-weight: bold;
+                transform: translateY(50%);
+                
+                mix-blend-mode: difference;
+            }
+            body{
+                background-color: white;
+            }
+            article{
+                position: relative;
+                z-index: 1;
+            }
+            body::after{
+                content: '';
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                left: 0;
+                top: 0;
+                z-index: 0;
+                background-color: black;
+            }
+        </style>
+    </article>
+</body>
+</html>
