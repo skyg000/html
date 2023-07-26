@@ -17,8 +17,80 @@
                 ctx.fillRect(100,50,200,200);
                 ctx.strokeRect(100,300,200,200);
                 /* ctx.arc(x,y,r,star,end,direction) */
-                ctx.arc(200,650,100,0,Math.PI*2,false);
-                ctx.fill()
+                ctx.lineWidth=20;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = 'red'
+
+                ctx.arc(200,650,100,0,Math.PI,true);
+                ctx.stroke(); 
+
+                ctx.beginPath(); /* 다시 시작하는 명령어 */
+                ctx.lineTo(350,100)
+                ctx.lineTo(500,100)
+                ctx.stroke();
+                ctx.closePath(); /* 닫아주는 명령어 */
+
+                const newImg = new Image();
+                    newImg.src = '../img/16.jpg'
+                
+                    newImg.addEventListener('load',()=>{
+                        ctx.drawImage(newImg,350,300,200,200);
+                        ctx.drawImage(newImg,600,300,200,200,600,300,400,300)
+                    })
+                    
+                const newVido = document.createElement('video')
+                        newVido.src = '../img/15.mp4';
+                        newVido.muted = 'muted';
+                        newVido.play();
+
+                        newVido.addEventListener('loadedmetadata',(e)=>{
+                           /*  메타 데이터 = 재생시간 정보 확인 */
+                            console.log('e');
+                        })
+                        newVido.addEventListener('loadeddata',()=>{
+                            /* 동영상 프레임 조금이라도 준비 되면 발생 */
+                            console.log('loadeddata');
+                        })
+                        newVido.addEventListener('canplay',()=>{
+                            /* 동영상 재생 시 발생 */
+                            console.log('canplay');
+                        })
+                        newVido.addEventListener('canplaythrough',(e)=>{
+                            /* 동영상 전체가 끊김없이 재생할 수 있을 때 발생 */
+                            console.log('canplaythrough',e);
+                            ctx.drawImage(newVido,600,100,300,200)
+                            videoDraw();
+                        })
+                    function videoDraw(){
+                        ctx.drawImage(newVido,600,100,300,200)
+                        if(!newVido.ended){
+                        requestAnimationFrame(videoDraw);
+                    }else{
+                        cancelAnimationFrame(videoDraw);
+                    }
+                }
+                let num = 0
+                function skill(){
+                    num++;
+                    ctx.clearRect(600,650,1000,900);
+                    ctx.beginPath();
+                    ctx.arc(700,750,100,0, Math.PI*2*num/100,false)
+                    ctx.stroke()
+                    if(num < 100) requestAnimationFrame(skill)
+                }
+                skill();
+                function sss(){
+                    this.Width=20;
+                    this.color='red'
+                    this.x = 500;
+                    this.y = 500;
+                    this.size = [200,200];
+                    this.draw = function(){
+                        return 'draw'
+                    }
+                }
+                let obj = new sss();
+                console.log(obj.draw);
     </script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <article>
+        <h2> 버튼 클릭시 classname 추가</h2>
+        <button> 클릭 시 H2에 classname on이 추가 됨</button>
+        <div> 여기에 마우스 올려주세요</div>
+        <p> div에 마우스 오버시 p에 classname active가 추가 됨</p>
+        <style>
+            article {width:50%; margin:0px auto; height:100vh}
+        </style>
+    </article>
+
+    <article>
+        <h2>스크롤시 이 article이 보이면 article에 classname on 추가</h2>
+    </article>
+
+    <script>
+        const article2 = document.querySelector('article:nth-of-type(2)')
+
+        let io = new IntersectionObserver(function(v){
+            v.forEach(function(d){
+                만약에 d의 intersctionRatio 값이 0보다 크면
+                    classname a를 추가
+            })
+
+
+        })
+
+        io.observe(article2)
+    </script>
+</body>
+</html>
