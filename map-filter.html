@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> 
+        let data = [
+            {id:0,name:'수박'},
+            {id:1,name:'사과'},
+            {id:2,name:'얼음'},
+        ];
+        let [a,...all] = data; /* 스프에드 연산자 | 참조가 아니라 복사를 한것이라 별도의 값을 가진다 */
+        
+        all[0].name = '복숭아'
+        console.log(data);
+        console.log(all);
+        let bbb = data; /* bbb=데이터와 동일한값을 가진다 | 하나의 데이터를 참조하는 형태(데이터를 변경하면 값이 바뀜) */
+        /* 속성의이름과 값의 이름이 같을 때 하나로 생략가능 */
+        /* 구조분해 문법 rest 앞에 ...은 필수 */ 
+
+        let addData = data.map((obj,k)=>{/* forEach 와 비슷함 | 데이터를 추가할때 사용 */
+            obj.num = k;
+            return obj;
+        })
+        console.log(addData);
+
+        /* map과 filter는 배열일때만 사용가능 객체일때는 사용 불가능 */
+
+        let find = data.filter(obj => obj.name === '사과'); 
+        /* forEach 와 비슷함 | 해당값이 true이면 retrun되어 find로 값이 들어감 | {}가 있으면 retrun을 입력해줘야 함 | 많은 데이터중에 찾고자 하는게 있을 때 사용*/
+        /* let find = data.filter(function(obj){
+                if(obj.name === '사과'){
+                    return obj;
+                }
+        } */
+        
+        console.log(find);
+
+    </script>
+</body>
+</html>
