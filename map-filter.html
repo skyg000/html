@@ -13,9 +13,12 @@
             {id:1,name:'사과'},
             {id:2,name:'얼음'},
         ];
+        let abc = {...data[0]}
+        abc.name = '참외'
+
         let [a,...all] = data; /* 스프에드 연산자 | 참조가 아니라 복사를 한것이라 별도의 값을 가진다 */
-        
         all[0].name = '복숭아'
+
         console.log(data);
         console.log(all);
         let bbb = data; /* bbb=데이터와 동일한값을 가진다 | 하나의 데이터를 참조하는 형태(데이터를 변경하면 값이 바뀜) */
@@ -40,6 +43,10 @@
         
         console.log(find);
 
+
+        let test = [10,20,30]
+            testCopy = [...test];
+            testCopy[0] = 1000;
     </script>
 </body>
 </html>
