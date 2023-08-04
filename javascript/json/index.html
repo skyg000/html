@@ -10,7 +10,10 @@
     <article>
         <h2>데이터 출력</h2>
         <div class="list">
-            <p>이름 </p>
+            <figure>
+                <img src="" alt="">
+                <p>이름 </p>
+            </figure>
         </div>
     </article>
     <script>
@@ -34,12 +37,11 @@
         매게변수가 여러게일 경우 ()를 한번 더 사용하여 여러개를 쓸수 있음*/ 
         .then(data => {
             console.log(
-                data.member,
-                data.member[0].name
+                data.data.code
                 )
                 const li = document.querySelector('.list p')
-            data.member.forEach(obj => {
-                li.innerText += obj.name; 
+            data.data.forEach(obj => {
+                li.innerText += obj.code; 
                 
             });
         })
