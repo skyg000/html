@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 <body>
     <article>
         <h2>데이터 출력</h2>
         <div class="list">
-            <figure>
-                <img src="" alt="">
-                <p>이름 </p>
-            </figure>
+            
         </div>
     </article>
     <script>
@@ -36,12 +34,16 @@
         {}사용 시 return을 사용해야 하는데 {}를 사용하지 않을때는 return이 자동으로 실행 시켜줌 | 
         매게변수가 여러게일 경우 ()를 한번 더 사용하여 여러개를 쓸수 있음*/ 
         .then(data => {
-            console.log(
-                data.data.code
-                )
-                const li = document.querySelector('.list p')
-            data.data.forEach(obj => {
-                li.innerText += obj.code; 
+        const li = document.querySelector('.list ')
+            data.review.forEach(obj => {
+                li.innerHTML += 
+                `
+                <figure class="aaa">
+                    <img src="${obj.imges}"><br>
+                    <p>별점 : ${obj.star}</p>  
+                    <p>후기 : ${obj.content}</p> 
+                    </figure>
+                    `
                 
             });
         })
