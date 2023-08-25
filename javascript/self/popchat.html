@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" href="./css/popchat.css">
+    <title>Document</title>
+</head>
+<body>
+    <article class="bot">
+        <h2> 챗봇 시작하기!  <i class="fa-solid fa-robot"></i> </h2>
+    </article>
+
+    <article class="pop">
+        <h2> 반갑습니다! 챗봇 시작 합니다!  <i class="fa-regular fa-circle-xmark"></i> </h2>
+        <ul>
+            
+        </ul>
+        <form>
+            <input type="text" placeholder="대화를 입력해주세요~">
+            <button>입력하기</button>
+        </form>
+    </article>
+    <script>
+        const main = document.querySelector('.bot')
+        const bot = document.querySelector('.fa-robot')
+        const pop = document.querySelector('.pop')
+        const out = document.querySelector('.fa-regular')
+        const txt = document.querySelector('.pop input')
+        const put = document.querySelector('.pop button')
+        const elUl = document.querySelector('.pop ul' )
+            bot.onclick=function(){
+                pop.style='display:flex',
+                main.style='display:none'
+            }
+            out.onclick = function(){
+                pop.style = 'display:none',
+                main.style='display:flex'
+            }
+            put.onclick= function(e){
+                e.preventDefault();
+                elUl.innerHTML += `
+                                <li>${txt.value}</li>
+                                `
+            }
+
+    </script>
+</body>
+</html>
