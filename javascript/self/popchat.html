@@ -10,7 +10,7 @@
 </head>
 <body>
     <article class="bot">
-        <h2> 챗봇 시작하기!  <i class="fa-solid fa-robot"></i> </h2>
+        <h2> 챗봇 시작하기! <b>Click -></b> <i class="fa-solid fa-robot"></i> </h2>
     </article>
 
     <article class="pop">
@@ -19,8 +19,8 @@
             
         </ul>
         <form>
-            <input type="text" placeholder="대화를 입력해주세요~">
-            <button>입력하기</button>
+            <input class="txtin" type="text" placeholder="대화를 입력해주세요~" onfocus="this.placeholder=''"  autocomplete="off">
+            <button onclick="txt.value()">입력하기</button>
         </form>
     </article>
     <script>
@@ -28,9 +28,14 @@
         const bot = document.querySelector('.fa-robot')
         const pop = document.querySelector('.pop')
         const out = document.querySelector('.fa-regular')
-        const txt = document.querySelector('.pop input')
+        const txt = document.querySelector('.txtin')
         const put = document.querySelector('.pop button')
         const elUl = document.querySelector('.pop ul' )
+        let today = new Date();
+        const hours = today.getHours()
+        const min = today.getMinutes()
+        const toDate = hours + ' : ' + min;
+        console.log(toDate);
             bot.onclick=function(){
                 pop.style='display:flex',
                 main.style='display:none'
@@ -38,14 +43,19 @@
             out.onclick = function(){
                 pop.style = 'display:none',
                 main.style='display:flex'
+                elUl.innerHTML += ``;
             }
             put.onclick= function(e){
                 e.preventDefault();
                 elUl.innerHTML += `
-                                <li>${txt.value}</li>
+                                <li>
+                                    ${txt.value} 
+                                </li>
+                                <p class="day">
+                                ${toDate}
+                                </p>
                                 `
-            }
-
+                            }
     </script>
 </body>
 </html>
